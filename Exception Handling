@@ -1,0 +1,34 @@
+import java.io.*;
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            // Arithmetic Exception
+            int divideByZero = 5 / 0; 
+
+            // Array Index Out of Bounds Exception
+            int[] arr = new int[5];
+            System.out.println(arr[10]);
+
+            // Null Pointer Exception
+            String str = null;
+            System.out.println(str.length());
+
+            // File Not Found Exception
+            FileReader file = new FileReader("non_existent_file.txt");
+
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: Cannot divide by zero");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException: Invalid array index");
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException: Trying to access a null object");
+        } catch (FileNotFoundException e) {
+            System.out.println("FileNotFoundException: File not found");
+        } catch (Exception e) {
+            System.out.println("General Exception: " + e.getMessage());
+        } finally {
+            System.out.println("Execution completed.");
+        }
+    }
+}
